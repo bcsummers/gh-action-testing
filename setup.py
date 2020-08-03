@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Setup for falcon-provider-logger package."""
+"""Setup for gh-action-testing package."""
 # standard library
 import os
 
@@ -8,7 +8,7 @@ from setuptools import find_packages, setup
 
 metadata = {}
 metadata_file: str = os.path.join(
-    os.path.abspath(os.path.dirname(__file__)), 'falcon_provider_logger', '__metadata__.py'
+    os.path.abspath(os.path.dirname(__file__)), 'gh_action_testing', '__metadata__.py'
 )
 with open(metadata_file, mode='r', encoding='utf-8',) as f:
     # load metadat into a dict
@@ -69,10 +69,10 @@ setup(
     long_description_content_type='text/x-rst',
     name=metadata['__package_name__'],
     packages=find_packages(exclude=['tests', 'tests.*']),
-    package_dir={'falcon_provider_logging': 'falcon_provider_logging'},
+    package_dir={'gh_action_testing': 'gh_action_testing'},
     project_urls={
-        'Documentation': 'https://github.com/bcsummers/falcon-provider-logger/',
-        'Source': 'https://github.com/bcsummers/falcon-provider-logger/',
+        'Documentation': 'https://github.com/bcsummers/gh-action-testing/',
+        'Source': 'https://github.com/bcsummers/gh-action-testing/',
     },
     python_requires='>=3.6',
     scripts=[],
