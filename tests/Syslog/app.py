@@ -5,8 +5,10 @@ from typing import Any
 
 # third-party
 import falcon
-from falcon_provider_logger.middleware import LoggerMiddleware
-from falcon_provider_logger.utils import syslog_handler
+
+# first-party
+from gh_action_testing.middleware import LoggerMiddleware
+from gh_action_testing.utils import syslog_handler
 
 
 class LoggerSyslogTcpResource:

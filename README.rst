@@ -71,8 +71,8 @@ The example below is a basic logger middleware using default values as defined i
 .. code:: python
 
     import falcon
-    from falcon_provider_logger.middleware import LoggerMiddleware
-    from falcon_provider_logger.utils import rotating_handler
+    from gh_action_testing.middleware import LoggerMiddleware
+    from gh_action_testing.utils import rotating_handler
 
 
     class LoggerMiddleWareResource(object):
@@ -110,8 +110,8 @@ The example below shows a heavily customized logger.
 .. code:: python
 
     import falcon
-    from falcon_provider_logger.middleware import LoggerMiddleware
-    from falcon_provider_logger.utils import rotating_handler
+    from gh_action_testing.middleware import LoggerMiddleware
+    from gh_action_testing.utils import rotating_handler
 
 
     class LoggerMiddleWareResource(object):
@@ -182,8 +182,8 @@ The example below is a basic logger middleware using default values as defined i
 .. code:: python
 
     import falcon
-    from falcon_provider_logger.middleware import LoggerMiddleware
-    from falcon_provider_logger.utils import syslog_handler
+    from gh_action_testing.middleware import LoggerMiddleware
+    from gh_action_testing.utils import syslog_handler
 
 
     class LoggerMiddleWareResource(object):
@@ -221,8 +221,8 @@ The example below shows a heavily customized logger.
 .. code:: python
 
     import falcon
-    from falcon_provider_logger.middleware import LoggerMiddleware
-    from falcon_provider_logger.utils import syslog_handler
+    from gh_action_testing.middleware import LoggerMiddleware
+    from gh_action_testing.utils import syslog_handler
 
 
     class LoggerMiddleWareResource(object):
@@ -269,7 +269,7 @@ This module can be a dependency for other middleware components. If using this m
 .. code:: python
 
     import falcon
-    from falcon_provider_logger.middleware import LoggerMiddleware
+    from gh_action_testing.middleware import LoggerMiddleware
 
 
     class LoggerMiddleWareResource(object):

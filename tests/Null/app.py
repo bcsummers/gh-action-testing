@@ -5,7 +5,9 @@ from typing import Any
 
 # third-party
 import falcon
-from falcon_provider_logger.middleware import LoggerMiddleware
+
+# first-party
+from gh_action_testing.middleware import LoggerMiddleware
 
 
 class LoggerNullLoggerResource:
