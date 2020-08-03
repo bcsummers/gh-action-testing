@@ -2,7 +2,7 @@
 Github Action Testing
 ======================
 
-|coverage| |code-style| |pre-commit|
+|build| |coverage| |code-style| |pre-commit|
 
 A repo for testing github actions.
 
@@ -14,7 +14,7 @@ Install the extension via pip.
 
 .. code:: bash
 
-    > pip install falcon-provider-logger
+    > pip install gh-action-testing
 
 --------
 Overview
@@ -296,7 +296,7 @@ After cloning the repository, all development requirements can be installed via 
 
 .. code:: bash
 
-    > pip install falcon-provider-logger[dev]
+    > pip install gh-action-testing[dev]
     > pre-commit install
 
 Testing
@@ -306,10 +306,13 @@ Run pytest test cases and get a coverage report.
 
 .. code:: bash
 
-    > pytest --cov=falcon_provider_logger --cov-report=term-missing tests/
+    > pytest --cov=gh_action_testing --cov-report=term-missing tests/
+
+.. |build| image:: https://github.com/bcsummers/gh-action-testing/workflows/build/badge.svg
+    :target: https://github.com/bcsummers/gh-action-testing/actions
 
 .. |coverage| image:: https://codecov.io/gh/bcsummers/gh-action-testing/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/bcsummers/falcon-provider-logger
+    :target: https://codecov.io/gh/bcsummers/gh-action-testing
 
 .. |code-style| image:: https://img.shields.io/badge/code%20style-black-000000.svg
     :target: https://github.com/python/black
