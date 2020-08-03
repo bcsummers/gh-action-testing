@@ -6,8 +6,6 @@ from typing import Any
 
 # third-party
 import falcon
-
-# first-party
 from falcon_provider_logger.middleware import LoggerMiddleware
 
 
