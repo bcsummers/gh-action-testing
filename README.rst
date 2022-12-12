@@ -311,7 +311,7 @@ Run pytest test cases and get a coverage report.
 .. |build| image:: https://github.com/bcsummers/gh-action-testing/workflows/build/badge.svg
     :target: https://github.com/bcsummers/gh-action-testing/actions/workflows/main.yml
 
-.. |coverage| image:: https://codecov.io/gh/bcsummers/gh-action-testing/branch/master/graph/badge.svg
+.. |coverage| image:: https://codecov.io/gh/bcsummers/gh-action-testing/branch/develop/graph/badge.svg?token=VTEEB03ADS
     :target: https://codecov.io/gh/bcsummers/gh-action-testing
 
 .. |code-style| image:: https://img.shields.io/badge/code%20style-black-000000.svg
