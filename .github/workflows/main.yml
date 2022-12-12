@@ -11,7 +11,7 @@ jobs:
   pre-flight:
     strategy:
       matrix:
-        poetry-version: ["latest"]
+        # poetry-version: ["latest"]
         python-version: ['3.10', '3.11']
         os: [ubuntu-latest]
 
@@ -49,8 +49,8 @@ jobs:
       # Install poetry
       - name: Run image
         uses: abatilo/actions-poetry@v2
-        with:
-          poetry-version: ${{ matrix.poetry-version }}
+        # with:
+        #   poetry-version: ${{ matrix.poetry-version }}
 
       # Install dependencies
       - name: Install dependencies
