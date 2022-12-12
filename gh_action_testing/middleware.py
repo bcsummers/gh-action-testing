@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Falcon logger middleware module."""
 # standard library
 import logging

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Falcon app used for testing."""
 # standard library
 from typing import Any
@@ -24,7 +23,7 @@ class LoggerSyslogTcpResource:
         self.log.warning(f'WARNING {key}')
         self.log.error(f'ERROR {key}')
         self.log.critical(f'CRITICAL {key}')
-        resp.body = f'Logged - {key}'
+        resp.text = f'Logged - {key}'
 
     def on_post(self, req: falcon.Request, resp: falcon.Response) -> None:
         """Support POST method."""
@@ -35,11 +34,11 @@ class LoggerSyslogTcpResource:
         self.log.warning(f'WARNING {key} {value}')
         self.log.error(f'ERROR {key} {value}')
         self.log.critical(f'CRITICAL {key} {value}')
-        resp.body = f'Logged - {key}'
+        resp.text = f'Logged - {key}'
 
 
 sh: object = syslog_handler(level='debug', host='0.0.0.0', name='tcp', port=5141, socktype='TCP')
-app_sh_tcp_logger = falcon.API(middleware=[LoggerMiddleware([sh], name='SERVER-TCP')])
+app_sh_tcp_logger = falcon.App(middleware=[LoggerMiddleware([sh], name='SERVER-TCP')])
 app_sh_tcp_logger.add_route('/middleware', LoggerSyslogTcpResource())
 
 
@@ -56,7 +55,7 @@ class LoggerSyslogUdpResource:
         self.log.warning(f'WARNING {key}')
         self.log.error(f'ERROR {key}')
         self.log.critical(f'CRITICAL {key}')
-        resp.body = f'Logged - {key}'
+        resp.text = f'Logged - {key}'
 
     def on_post(self, req: falcon.Request, resp: falcon.Response) -> None:
         """Support POST method."""
@@ -66,9 +65,9 @@ class LoggerSyslogUdpResource:
         self.log.warning(f'WARNING {key}')
         self.log.error(f'ERROR {key}')
         self.log.critical(f'CRITICAL {key}')
-        resp.body = f'Logged - {key}'
+        resp.text = f'Logged - {key}'
 
 
 sh: object = syslog_handler(level='debug', host='0.0.0.0', name='udp', port=5140)
-app_sh_udp_logger = falcon.API(middleware=[LoggerMiddleware([sh], name='SERVER-UDP')])
+app_sh_udp_logger = falcon.App(middleware=[LoggerMiddleware([sh], name='SERVER-UDP')])
 app_sh_udp_logger.add_route('/middleware', LoggerSyslogUdpResource())

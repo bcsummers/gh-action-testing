@@ -2,9 +2,9 @@ name: build
 
 on:
   push:
-    branches: [develop, master]
+    branches: [develop, main]
   pull_request:
-    branches: [develop, master]
+    branches: [develop, main]
   workflow_dispatch:
 
 jobs:
@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8]
+        python-version: [3.10, 3.11]
 
     steps:
       - uses: actions/checkout@v2
@@ -65,7 +65,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        python-version: [3.6, 3.7, 3.8]
+        python-version: [3.10, 3.11]
 
     steps:
       - uses: actions/checkout@v2
@@ -103,7 +103,7 @@ jobs:
           pytest
           --cov=gh_action_testing
           --cov-report=html:artifacts/cov-report-${{ matrix.os }}-${{ matrix.python-version }}
-          --cov-report=term
+          --cov-report=xml
           --html=artifacts/test-report-${{ matrix.os }}-${{ matrix.python-version }}.html
           --junitxml=junit/test-results-${{ matrix.os }}-${{ matrix.python-version }}.xml
           --self-contained-html

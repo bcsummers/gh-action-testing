@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Falcon app used for testing."""
 # standard library
 from typing import Any
@@ -23,7 +22,7 @@ class LoggerNullLoggerResource:
         self.log.warning(f'WARNING {key}')
         self.log.error(f'ERROR {key}')
         self.log.critical(f'CRITICAL {key}')
-        resp.body = f'Logged - {key}'
+        resp.text = f'Logged - {key}'
 
     def on_post(self, req: falcon.Request, resp: falcon.Response) -> None:
         """Support POST method."""
@@ -34,8 +33,8 @@ class LoggerNullLoggerResource:
         self.log.warning(f'WARNING {key} {value}')
         self.log.error(f'ERROR {key} {value}')
         self.log.critical(f'CRITICAL {key} {value}')
-        resp.body = f'Logged - {key}'
+        resp.text = f'Logged - {key}'
 
 
-app_null_logger = falcon.API(middleware=[LoggerMiddleware(name='SERVER-NULL')])
+app_null_logger = falcon.App(middleware=[LoggerMiddleware(name='SERVER-NULL')])
 app_null_logger.add_route('/middleware', LoggerNullLoggerResource())

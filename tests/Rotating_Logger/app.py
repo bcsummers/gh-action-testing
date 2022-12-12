@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Falcon app used for testing."""
 # standard library
 from typing import Any
@@ -24,7 +23,7 @@ class LoggerRotatingLoggerResource:
         self.log.warning(f'WARNING {key}')
         self.log.error(f'ERROR {key}')
         self.log.critical(f'CRITICAL {key}')
-        resp.body = f'Logged - {key}'
+        resp.text = f'Logged - {key}'
 
     def on_post(self, req: falcon.Request, resp: falcon.Response) -> None:
         """Support POST method."""
@@ -35,9 +34,9 @@ class LoggerRotatingLoggerResource:
         self.log.warning(f'WARNING {key} {value}')
         self.log.error(f'ERROR {key} {value}')
         self.log.critical(f'CRITICAL {key} {value}')
-        resp.body = f'Logged - {key}'
+        resp.text = f'Logged - {key}'
 
 
 rh: object = rotating_handler(level='debug')
-app_rh_logger = falcon.API(middleware=[LoggerMiddleware([rh], name='SERVER-RFH')])
+app_rh_logger = falcon.App(middleware=[LoggerMiddleware([rh], name='SERVER-RFH')])
 app_rh_logger.add_route('/middleware', LoggerRotatingLoggerResource())

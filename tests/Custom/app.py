@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Falcon app used for testing."""
 # standard library
 import logging
@@ -24,7 +23,7 @@ class LoggerCustomLoggerResource:
         self.log.warning(f'WARNING {key}')
         self.log.error(f'ERROR {key}')
         self.log.critical(f'CRITICAL {key}')
-        resp.body = f'Logged - {key}'
+        resp.text = f'Logged - {key}'
 
     def on_post(self, req: falcon.Request, resp: falcon.Response) -> None:
         """Support POST method."""
@@ -35,9 +34,9 @@ class LoggerCustomLoggerResource:
         self.log.warning(f'WARNING {key} {value}')
         self.log.error(f'ERROR {key} {value}')
         self.log.critical(f'CRITICAL {key} {value}')
-        resp.body = f'Logged - {key}'
+        resp.text = f'Logged - {key}'
 
 
 logger: object = logging.getLogger('custom')
-app_custom_logger = falcon.API(middleware=[LoggerMiddleware(logger=logger)])
+app_custom_logger = falcon.App(middleware=[LoggerMiddleware(logger=logger)])
 app_custom_logger.add_route('/middleware', LoggerCustomLoggerResource())

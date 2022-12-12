@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Logger middleware module."""
 # standard library
 import logging
