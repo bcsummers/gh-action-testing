@@ -89,12 +89,14 @@ jobs:
           --self-contained-html
           tests/
 
-      # # Upload file to codecov
-      # - name: Upload coverage.xml to codecov
-      #   uses: ./codecov-action@v1
-      #   with:
-      #     file: ${{ github.workspace }}/coverage.xml
-      #     fail_ci_if_error: true
+      # Upload file to codecov
+      - name: Upload to codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          # files: ./coverage1.xml,./coverage2.xml # optional
+          flags: pytest # optional
+          verbose: false # optional (default = false)
 
       # Artifact upload
       - name: Upload pytest test results
