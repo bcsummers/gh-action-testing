@@ -309,7 +309,7 @@ Run pytest test cases and get a coverage report.
     > pytest --cov=gh_action_testing --cov-report=term-missing tests/
 
 .. |build| image:: https://github.com/bcsummers/gh-action-testing/workflows/build/badge.svg
-    :target: https://github.com/bcsummers/gh-action-testing/actions
+    :target: https://github.com/bcsummers/gh-action-testing/actions/workflows/main.yml
 
 .. |coverage| image:: https://codecov.io/gh/bcsummers/gh-action-testing/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/bcsummers/gh-action-testing
