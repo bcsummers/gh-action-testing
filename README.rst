@@ -2,7 +2,7 @@
 Github Action Testing
 ======================
 
-|coverage| |code-style| |pre-commit|
+|build| |coverage| |code-style| |pre-commit|
 
 A repo for testing github actions.
 
@@ -14,7 +14,7 @@ Install the extension via pip.
 
 .. code:: bash
 
-    > pip install falcon-provider-logger
+    > pip install gh-action-testing
 
 --------
 Overview
@@ -31,7 +31,7 @@ Features
 * Supports using a pre-existing logger instance.
 * Supports multiple handler (e.g., using both file, syslog handlers, and/or custom handler).
 
-.. IMPORTANT:: This middleware component should be one of the first middleware component loaded to make it available for other components. From the Falcon docs "*Each component’s process_request, process_resource, and process_response methods are executed hierarchically, as a stack, following the ordering of the list passed via the middleware kwarg of falcon.API.*".
+.. IMPORTANT:: This middleware component should be one of the first middleware component loaded to make it available for other components. From the Falcon docs "*Each component’s process_request, process_resource, and process_response methods are executed hierarchically, as a stack, following the ordering of the list passed via the middleware kwarg of falcon.App.*".
 
 --------
 Requires
@@ -71,8 +71,8 @@ The example below is a basic logger middleware using default values as defined i
 .. code:: python
 
     import falcon
-    from falcon_provider_logger.middleware import LoggerMiddleware
-    from falcon_provider_logger.utils import rotating_handler
+    from gh_action_testing.middleware import LoggerMiddleware
+    from gh_action_testing.utils import rotating_handler
 
 
     class LoggerMiddleWareResource(object):
@@ -86,7 +86,7 @@ The example below is a basic logger middleware using default values as defined i
             self.log.warning(f'WARNING {key}')
             self.log.error(f'ERROR {key}')
             self.log.critical(f'CRITICAL {key}')
-            resp.body = f'Logged - {key}'
+            resp.text = f'Logged - {key}'
 
         def on_post(self, req, resp):
             """Support GET method."""
@@ -97,10 +97,10 @@ The example below is a basic logger middleware using default values as defined i
             self.log.warning(f'WARNING {key} {value}')
             self.log.error(f'ERROR {key} {value}')
             self.log.critical(f'CRITICAL {key} {value}')
-            resp.body = f'Logged - {key}'
+            resp.text = f'Logged - {key}'
 
     rh = rotating_handler()
-    app = falcon.API(middleware=[LoggerMiddleware([rh])])
+    app = falcon.App(middleware=[LoggerMiddleware([rh])])
     app.add_route('/middleware', LoggerMiddleWareResource())
 
 Advanced Example
@@ -110,8 +110,8 @@ The example below shows a heavily customized logger.
 .. code:: python
 
     import falcon
-    from falcon_provider_logger.middleware import LoggerMiddleware
-    from falcon_provider_logger.utils import rotating_handler
+    from gh_action_testing.middleware import LoggerMiddleware
+    from gh_action_testing.utils import rotating_handler
 
 
     class LoggerMiddleWareResource(object):
@@ -125,7 +125,7 @@ The example below shows a heavily customized logger.
             self.log.warning(f'WARNING {key}')
             self.log.error(f'ERROR {key}')
             self.log.critical(f'CRITICAL {key}')
-            resp.body = f'Logged - {key}'
+            resp.text = f'Logged - {key}'
 
         def on_post(self, req, resp):
             """Support GET method."""
@@ -136,7 +136,7 @@ The example below shows a heavily customized logger.
             self.log.warning(f'WARNING {key} {value}')
             self.log.error(f'ERROR {key} {value}')
             self.log.critical(f'CRITICAL {key} {value}')
-            resp.body = f'Logged - {key}'
+            resp.text = f'Logged - {key}'
 
     rh = rotating_handler(
         backup=5,
@@ -148,7 +148,7 @@ The example below shows a heavily customized logger.
         max_bytes='5000',
         mode='w',
     )
-    app = falcon.API(middleware=[LoggerMiddleware(handlers=[rh], level='INFO', name='MY-LOGGER')])
+    app = falcon.App(middleware=[LoggerMiddleware(handlers=[rh], level='INFO', name='MY-LOGGER')])
     app.add_route('/middleware', LoggerMiddleWareResource())
 
 --------------
@@ -182,8 +182,8 @@ The example below is a basic logger middleware using default values as defined i
 .. code:: python
 
     import falcon
-    from falcon_provider_logger.middleware import LoggerMiddleware
-    from falcon_provider_logger.utils import syslog_handler
+    from gh_action_testing.middleware import LoggerMiddleware
+    from gh_action_testing.utils import syslog_handler
 
 
     class LoggerMiddleWareResource(object):
@@ -197,7 +197,7 @@ The example below is a basic logger middleware using default values as defined i
             self.log.warning(f'WARNING {key}')
             self.log.error(f'ERROR {key}')
             self.log.critical(f'CRITICAL {key}')
-            resp.body = f'Logged - {key}'
+            resp.text = f'Logged - {key}'
 
         def on_post(self, req, resp):
             """Support GET method."""
@@ -208,10 +208,10 @@ The example below is a basic logger middleware using default values as defined i
             self.log.warning(f'WARNING {key} {value}')
             self.log.error(f'ERROR {key} {value}')
             self.log.critical(f'CRITICAL {key} {value}')
-            resp.body = f'Logged - {key}'
+            resp.text = f'Logged - {key}'
 
     sh = syslog_handler()
-    app = falcon.API(middleware=[LoggerMiddleware([sh])])
+    app = falcon.App(middleware=[LoggerMiddleware([sh])])
     app.add_route('/middleware', LoggerMiddleWareResource())
 
 Advanced Example
@@ -221,8 +221,8 @@ The example below shows a heavily customized logger.
 .. code:: python
 
     import falcon
-    from falcon_provider_logger.middleware import LoggerMiddleware
-    from falcon_provider_logger.utils import syslog_handler
+    from gh_action_testing.middleware import LoggerMiddleware
+    from gh_action_testing.utils import syslog_handler
 
 
     class LoggerMiddleWareResource(object):
@@ -236,7 +236,7 @@ The example below shows a heavily customized logger.
             self.log.warning(f'WARNING {key}')
             self.log.error(f'ERROR {key}')
             self.log.critical(f'CRITICAL {key}')
-            resp.body = f'Logged - {key}'
+            resp.text = f'Logged - {key}'
 
         def on_post(self, req, resp):
             """Support GET method."""
@@ -247,7 +247,7 @@ The example below shows a heavily customized logger.
             self.log.warning(f'WARNING {key} {value}')
             self.log.error(f'ERROR {key} {value}')
             self.log.critical(f'CRITICAL {key} {value}')
-            resp.body = f'Logged - {key}'
+            resp.text = f'Logged - {key}'
 
     sh = syslog_handler(
         host='10.10.10.10',
@@ -258,7 +258,7 @@ The example below shows a heavily customized logger.
         port='5140',
         socktype='TCP',
     )
-    app = falcon.API(middleware=[LoggerMiddleware(handlers=[sh], level='INFO', name='MY-LOGGER')])
+    app = falcon.App(middleware=[LoggerMiddleware(handlers=[sh], level='INFO', name='MY-LOGGER')])
     app.add_route('/middleware', LoggerMiddleWareResource())
 
 ------------
@@ -269,7 +269,7 @@ This module can be a dependency for other middleware components. If using this m
 .. code:: python
 
     import falcon
-    from falcon_provider_logger.middleware import LoggerMiddleware
+    from gh_action_testing.middleware import LoggerMiddleware
 
 
     class LoggerMiddleWareResource(object):
@@ -279,9 +279,9 @@ This module can be a dependency for other middleware components. If using this m
             """Support GET method."""
             key = req.get_param('key')
             self.log.debug(f'DEBUG {key}')  # No handler added so this would get dropped on the floor
-            resp.body = 'No Logging'
+            resp.text = 'No Logging'
 
-    app = falcon.API(middleware=[LoggerMiddleware()])
+    app = falcon.App(middleware=[LoggerMiddleware()])
     app.add_route('/middleware', LoggerMiddleWareResource())
 
 
@@ -296,7 +296,7 @@ After cloning the repository, all development requirements can be installed via 
 
 .. code:: bash
 
-    > pip install falcon-provider-logger[dev]
+    > pip install gh-action-testing[dev]
     > pre-commit install
 
 Testing
@@ -306,10 +306,13 @@ Run pytest test cases and get a coverage report.
 
 .. code:: bash
 
-    > pytest --cov=falcon_provider_logger --cov-report=term-missing tests/
+    > pytest --cov=gh_action_testing --cov-report=term-missing tests/
 
-.. |coverage| image:: https://codecov.io/gh/bcsummers/gh-action-testing/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/bcsummers/falcon-provider-logger
+.. |build| image:: https://github.com/bcsummers/gh-action-testing/workflows/build/badge.svg
+    :target: https://github.com/bcsummers/gh-action-testing/actions/workflows/main.yml
+
+.. |coverage| image:: https://codecov.io/gh/bcsummers/gh-action-testing/branch/develop/graph/badge.svg?token=VTEEB03ADS
+    :target: https://codecov.io/gh/bcsummers/gh-action-testing
 
 .. |code-style| image:: https://img.shields.io/badge/code%20style-black-000000.svg
     :target: https://github.com/python/black
