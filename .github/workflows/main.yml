@@ -25,7 +25,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       # Cache pre-commit
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: ${{ github.workspace }}/.cache/pre-commit-${{ matrix.python-version }}
           key: pre-commit|${{ matrix.python-version }}|${{ hashFiles('.pre-commit-config.yaml') }}
@@ -38,7 +38,7 @@ jobs:
 
       # Cache pip directory
       - name: pip cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ steps.pip-cache.outputs.dir }}
           key: ${{ runner.os }}-pip-${{ matrix.python-version }}
@@ -91,7 +91,7 @@ jobs:
 
       # Cache pip directory
       - name: pip cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ steps.pip-cache.outputs.dir }}
           key: ${{ runner.os }}-pip-${{ matrix.python-version }}
