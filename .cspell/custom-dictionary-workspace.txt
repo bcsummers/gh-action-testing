@@ -1,4 +1,7 @@
 # Custom Dictionary Words
 codecov
 junitxml
+lcov
+pipx
 pytest
+runforesight

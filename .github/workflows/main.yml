@@ -96,7 +96,8 @@ jobs:
                   poetry run pytest
                   --cov=gh_action_testing
                   --cov-report=html:artifacts/cov-report-${{ matrix.os }}-${{ matrix.python-version }}
-                  --cov-report=xml
+                  --cov-report=lcov:artifacts/cov.info-${{ matrix.os }}-${{ matrix.python-version }}
+                  --cov-report=xml:artifacts/cov.xml-${{ matrix.os }}-${{ matrix.python-version }}
                   --html=artifacts/test-report-${{ matrix.os }}-${{ matrix.python-version }}.html
                   --junitxml=junit/test-results-${{ matrix.os }}-${{ matrix.python-version }}.xml
                   --self-contained-html
@@ -109,16 +110,16 @@ jobs:
                   api_key: ac17018c-6154-411a-8674-1481ffa786ff
                   test_format: JUNIT
                   test_framework: PYTEST
-                  test_path: artifacts
-                  coverage_format: JACOCO/XML
-                  coverage_path: artifacts
+                  test_path: junit/test-results-${{ matrix.os }}-${{ matrix.python-version }}.xml
+                  coverage_format: TXT
+                  coverage_path: artifacts/cov.info-${{ matrix.os }}-${{ matrix.python-version }}
 
             # Upload file to codecov
             - name: Upload to codecov
               uses: codecov/codecov-action@v3
               with:
                   token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-                  # files: ./coverage1.xml,./coverage2.xml # optional
+                  files: artifacts/cov.xml-${{ matrix.os }}-${{ matrix.python-version }}
                   flags: pytest # optional
                   verbose: false # optional (default = false)
 
