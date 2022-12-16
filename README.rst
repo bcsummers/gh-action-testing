@@ -341,7 +341,7 @@ Run pytest test cases and get a coverage report.
 .. |license| image:: https://img.shields.io/github/license/bcsummers/gh-action-testing
     :target: https://www.apache.org/licenses/LICENSE-2.0
 
-.. |maintainability-percentage| https://img.shields.io/codeclimate/maintainability-percentage/bcsummers/gh-action-testing
+.. |maintainability-percentage| image:: https://img.shields.io/codeclimate/maintainability-percentage/bcsummers/gh-action-testing
     :target: https://codeclimate.com/github/bcsummers/gh-action-testing
 
 .. |poetry| image:: https://img.shields.io/static/v1?logo=poetry&logoColor=white&label=poetry&message=enabled&color=60a5fa
