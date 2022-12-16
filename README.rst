@@ -2,7 +2,9 @@
 Github Action Testing
 ======================
 
-|build| |coverage| |success-test| |utilization| |code-style| |pre-commit|
+|build| |coverage| |latest-test| |successful-test| |utilization|
+
+|code-style| |poetry| |pre-commit|
 
 A repo for testing github actions.
 
@@ -314,15 +316,26 @@ Run pytest test cases and get a coverage report.
 .. |coverage| image:: https://codecov.io/gh/bcsummers/gh-action-testing/branch/develop/graph/badge.svg?token=VTEEB03ADS
     :target: https://codecov.io/gh/bcsummers/gh-action-testing
 
-.. |success-test| image:: https://api-public.service.runforesight.com/api/v1/badge/success?repoId=92c63588-f38c-412a-96ca-60a56b67d061
+.. |latest-test| image:: https://api-public.service.runforesight.com/api/v1/badge/test?repoId=92c63588-f38c-412a-96ca-60a56b67d061
     :target: https://docs.runforesight.com/
 
-.. |utilization| https://api-public.service.runforesight.com/api/v1/badge/utilization?repoId=92c63588-f38c-412a-96ca-60a56b67d061
+.. |successful-test| image:: https://api-public.service.runforesight.com/api/v1/badge/success?repoId=92c63588-f38c-412a-96ca-60a56b67d061
     :target: https://docs.runforesight.com/
 
-.. |code-style| image:: https://img.shields.io/badge/code%20style-black-000000.svg
+.. |utilization| image: https://api-public.service.runforesight.com/api/v1/badge/utilization?repoId=92c63588-f38c-412a-96ca-60a56b67d061
+    :target: https://docs.runforesight.com/
+
+.. |codeql| image:: https://github.com/bcsummers/gh-action-testing/actions/workflows/codeql.yml/badge.svg
+    :target: https://github.com/bcsummers/gh-action-testing/actions/workflows/codeql.yml
+
+.. |code-style| image:: https://img.shields.io/static/v1?logo=black&label=code%20style&message=black&color=black
     :target: https://github.com/python/black
+    :alt: poetry
+
+.. |poetry| image:: https://img.shields.io/static/v1?logo=pre-commit&logoColor=white&label=poetry&message=enabled&color=60a5fa
+    :target: https://github.com/python-poetry/poetry
+    :alt: poetry
 
 .. |pre-commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
-   :target: https://github.com/pre-commit/pre-commit
-   :alt: pre-commit
+    :target: https://github.com/pre-commit/pre-commit
+    :alt: pre-commit
