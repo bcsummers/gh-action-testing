@@ -345,7 +345,7 @@ Run pytest test cases and get a coverage report.
 .. |coverage| image:: https://codecov.io/gh/bcsummers/gh-action-testing/branch/develop/graph/badge.svg?token=VTEEB03ADS
     :target: https://codecov.io/gh/bcsummers/gh-action-testing
 
-.. |dependency-review| image:: [https://github.com/bcsummers/gh-action-testing/actions/workflows/dependency-review.yml/badge.svg
+.. |dependency-review| image:: https://github.com/bcsummers/gh-action-testing/actions/workflows/dependency-review.yml/badge.svg
     :target: https://github.com/bcsummers/gh-action-testing/actions/workflows/dependency-review.yml
 
 .. |falcon| image:: https://img.shields.io/static/v1?logo=falcon&logoColor=white&label=falcon&message=add-on&color=60a5fa
