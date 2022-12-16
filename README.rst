@@ -2,9 +2,9 @@
 Github Action Testing
 ======================
 
-|build| |coverage| |latest-test| |successful-test| |utilization|
+|build| |coverage| |latest-test| |successful-test| |utilization| |codeql|
 
-|code-style| |poetry| |pre-commit|
+|falcon| |code-style| |poetry| |pre-commit|
 
 A repo for testing github actions.
 
@@ -317,25 +317,28 @@ Run pytest test cases and get a coverage report.
     :target: https://codecov.io/gh/bcsummers/gh-action-testing
 
 .. |latest-test| image:: https://api-public.service.runforesight.com/api/v1/badge/test?repoId=92c63588-f38c-412a-96ca-60a56b67d061
-    :target: https://docs.runforesight.com/
+    :target: https://www.runforesight.com/
 
 .. |successful-test| image:: https://api-public.service.runforesight.com/api/v1/badge/success?repoId=92c63588-f38c-412a-96ca-60a56b67d061
-    :target: https://docs.runforesight.com/
+    :target: https://www.runforesight.com/
 
-.. |utilization| image: https://api-public.service.runforesight.com/api/v1/badge/utilization?repoId=92c63588-f38c-412a-96ca-60a56b67d061
-    :target: https://docs.runforesight.com/
+.. |utilization| image:: https://api-public.service.runforesight.com/api/v1/badge/utilization?repoId=92c63588-f38c-412a-96ca-60a56b67d061
+    :target: https://www.runforesight.com/
 
 .. |codeql| image:: https://github.com/bcsummers/gh-action-testing/actions/workflows/codeql.yml/badge.svg
     :target: https://github.com/bcsummers/gh-action-testing/actions/workflows/codeql.yml
+
+.. |falcon| image:: https://img.shields.io/static/v1?logo=falcon&logoColor=white&label=falcon&message=add-on&color=60a5fa
+    :target: https://github.com/falconry/falcon
 
 .. |code-style| image:: https://img.shields.io/static/v1?logo=black&label=code%20style&message=black&color=black
     :target: https://github.com/python/black
     :alt: poetry
 
-.. |poetry| image:: https://img.shields.io/static/v1?logo=pre-commit&logoColor=white&label=poetry&message=enabled&color=60a5fa
+.. |poetry| image:: https://img.shields.io/static/v1?logo=poetry&logoColor=white&label=poetry&message=enabled&color=60a5fa
     :target: https://github.com/python-poetry/poetry
     :alt: poetry
 
-.. |pre-commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+.. |pre-commit| image:: https://img.shields.io/static/v1?logo=pre-commit&logoColor=white&label=pre-commit&message=enabled&color=60a5fa
     :target: https://github.com/pre-commit/pre-commit
     :alt: pre-commit
