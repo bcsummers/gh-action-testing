@@ -4,7 +4,6 @@ import logging
 import os
 import socket
 from logging.handlers import RotatingFileHandler, SysLogHandler
-from typing import Any, Optional
 
 
 class RotatingFileHandlerCustom(RotatingFileHandler):
@@ -13,11 +12,11 @@ class RotatingFileHandlerCustom(RotatingFileHandler):
     def __init__(
         self,
         filename: str,
-        mode: Optional[str] = 'a',
-        maxBytes: Optional[int] = 0,
-        backupCount: Optional[int] = 0,
-        encoding: Optional[str] = None,
-        delay: Optional[int] = 0,
+        mode: str | None = 'a',
+        maxBytes: int | None = 0,
+        backupCount: int | None = 0,
+        encoding: str | None = None,
+        delay: int | None = 0,
     ):
         """Create a customized RotatingFileHandler that supports creation of the full log path.
 
@@ -47,7 +46,7 @@ def get_level(level: str) -> int:
         int: The logging level as an int.
     """
     if not isinstance(level, int):
-        level: Any = logging.getLevelName(level.upper())
+        level: int = logging.getLevelName(level.upper())
         if not isinstance(level, int):  # pragma: no cover
             # only valid levels will return a int. invalid numbers don't throw an exception.
             raise RuntimeError('Invalid logging level.')
@@ -55,16 +54,16 @@ def get_level(level: str) -> int:
 
 
 def rotating_handler(
-    backup_count: Optional[int] = 10,
-    directory: Optional[str] = 'log',
-    filename: Optional[str] = 'server.log',
-    formatter: Optional[logging.Formatter] = None,
+    backup_count: int | None = 10,
+    directory: str | None = 'log',
+    filename: str | None = 'server.log',
+    formatter: logging.Formatter | None = None,
     # in 3.8 Literal[] could be used
-    level: Optional[str] = 'INFO',
-    name: Optional[str] = 'rfh',
-    max_bytes: Optional[int] = 10_485_760,
+    level: str | None = 'INFO',
+    name: str | None = 'rfh',
+    max_bytes: int | None = 10_485_760,
     # in 3.8 Literal[] could be used
-    mode: Optional[str] = 'a',
+    mode: str | None = 'a',
 ) -> RotatingFileHandlerCustom:
     """Return a configured instance of a rotating file handler with sane defaults.
 
@@ -98,15 +97,15 @@ def rotating_handler(
 
 
 def syslog_handler(
-    host: Optional[str] = 'localhost',
-    facility: Optional[str] = 'user',
-    formatter: Optional[logging.Formatter] = None,
+    host: str | None = 'localhost',
+    facility: str | None = 'user',
+    formatter: logging.Formatter | None = None,
     # in 3.8 Literal[] could be used
-    level: Optional[str] = 'INFO',
-    name: Optional[str] = 'sh',
-    port: Optional[int] = 514,
+    level: str | None = 'INFO',
+    name: str | None = 'sh',
+    port: int | None = 514,
     # in 3.8 Literal[] could be used
-    socktype: Optional[str] = 'UDP',
+    socktype: str | None = 'UDP',
 ) -> SysLogHandler:
     """Return a configured instance of a syslog handler with sane defaults.
 
