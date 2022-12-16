@@ -2,10 +2,9 @@
 Github Action Testing
 ======================
 
-|build| |coverage| |latest-test| |successful-test| |utilization| |codeql|
+|build| |codeql| |coverage| |successful-test| |utilization|
 
-|falcon| |code-style| |poetry| |pre-commit|
-
+|falcon| |poetry| |pre-commit| |code-style|
 A repo for testing github actions.
 
 ------------
