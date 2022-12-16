@@ -8,13 +8,13 @@ A repo for testing github actions.
 Workflow
 --------
 
-|build| |dependency-review| |codeql|
+|build| |codeql| |dependency-review|
 
 --------
 Analysis
 --------
 
-|maintainability-percentage| |coverage| |successful-test| |utilization|
+|coverage| |successful-test| |utilization| |maintainability-percentage|
 
 -----
 Other
