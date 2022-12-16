@@ -2,12 +2,25 @@
 Github Action Testing
 ======================
 
-|build| |maintainability-percentage| |codeql| |coverage| |successful-test| |utilization|
+A repo for testing github actions.
+
+--------
+Workflow
+--------
+
+|build| |dependency-review| |codeql|
+
+--------
+Analysis
+--------
+
+|maintainability-percentage| |coverage| |successful-test| |utilization|
+
+-----
+Other
+-----
 
 |falcon| |poetry| |pre-commit| |code-style| |license|
-
-
-A repo for testing github actions.
 
 ------------
 Installation
@@ -332,13 +345,16 @@ Run pytest test cases and get a coverage report.
 .. |coverage| image:: https://codecov.io/gh/bcsummers/gh-action-testing/branch/develop/graph/badge.svg?token=VTEEB03ADS
     :target: https://codecov.io/gh/bcsummers/gh-action-testing
 
+.. |dependency-review| image:: [https://github.com/bcsummers/gh-action-testing/actions/workflows/dependency-review.yml/badge.svg
+    :target: https://github.com/bcsummers/gh-action-testing/actions/workflows/dependency-review.yml
+
 .. |falcon| image:: https://img.shields.io/static/v1?logo=falcon&logoColor=white&label=falcon&message=add-on&color=60a5fa
     :target: https://github.com/falconry/falcon
 
 .. |latest-test| image:: https://api-public.service.runforesight.com/api/v1/badge/test?repoId=92c63588-f38c-412a-96ca-60a56b67d061
     :target: https://www.runforesight.com/
 
-.. |license| image:: https://img.shields.io/github/license/bcsummers/gh-action-testing
+.. |license| image:: https://img.shields.io/github/license/bcsummers/gh-action-testing?color=60a5fa
     :target: https://www.apache.org/licenses/LICENSE-2.0
 
 .. |maintainability-percentage| image:: https://img.shields.io/codeclimate/maintainability-percentage/bcsummers/gh-action-testing
