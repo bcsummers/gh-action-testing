@@ -23,7 +23,7 @@ jobs:
               uses: runforesight/foresight-workflow-kit-action@v1
               if: ${{ always() }}
               with:
-                  api_key: ${{ secrets.FORESIGHT_API_TOKEN }
+                  api_key: ${{ secrets.FORESIGHT_API_TOKEN }}
 
             # Install poetry
             - name: Install poetry
@@ -79,7 +79,7 @@ jobs:
               uses: runforesight/foresight-workflow-kit-action@v1
               if: ${{ always() }}
               with:
-                  api_key: ${{ secrets.FORESIGHT_API_TOKEN }
+                  api_key: ${{ secrets.FORESIGHT_API_TOKEN }}
 
             # Install poetry
             - name: Install poetry
@@ -114,7 +114,7 @@ jobs:
               uses: runforesight/foresight-test-kit-action@v1
               if: ${{ always() }}
               with:
-                  api_key: ${{ secrets.FORESIGHT_API_TOKEN }
+                  api_key: ${{ secrets.FORESIGHT_API_TOKEN }}
                   test_format: JUNIT
                   test_framework: PYTEST
                   test_path: junit/test-results-${{ matrix.os }}-${{ matrix.python-version }}.xml
