@@ -18,6 +18,13 @@ jobs:
         steps:
             - uses: actions/checkout@v3
 
+            # Make sure you put workflow kit action on top of all the steps
+            - name: Collect Workflow Telemetry
+              uses: runforesight/foresight-workflow-kit-action@v1
+              if: ${{ always() }}
+              with:
+                  api_key: ${{ secrets.FORESIGHT_API_TOKEN }
+
             # Install poetry
             - name: Install poetry
               run: pipx install poetry
@@ -72,7 +79,7 @@ jobs:
               uses: runforesight/foresight-workflow-kit-action@v1
               if: ${{ always() }}
               with:
-                  api_key: ac17018c-6154-411a-8674-1481ffa786ff
+                  api_key: ${{ secrets.FORESIGHT_API_TOKEN }
 
             # Install poetry
             - name: Install poetry
@@ -107,11 +114,11 @@ jobs:
               uses: runforesight/foresight-test-kit-action@v1
               if: ${{ always() }}
               with:
-                  api_key: ac17018c-6154-411a-8674-1481ffa786ff
+                  api_key: ${{ secrets.FORESIGHT_API_TOKEN }
                   test_format: JUNIT
                   test_framework: PYTEST
                   test_path: junit/test-results-${{ matrix.os }}-${{ matrix.python-version }}.xml
-                  coverage_format: TXT
+                  coverage_format: LCOV/TXT
                   coverage_path: artifacts/cov.info-${{ matrix.os }}-${{ matrix.python-version }}
 
             # Upload file to codecov
