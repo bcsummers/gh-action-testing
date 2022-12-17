@@ -2,10 +2,25 @@
 Github Action Testing
 ======================
 
-|build| |codeql| |coverage| |successful-test| |utilization|
+A repo for testing github actions.
+
+--------
+Workflow
+--------
+
+|build| |codeql| |dependency-review|
+
+--------
+Analysis
+--------
+
+|coverage| |successful-test| |utilization| |maintainability-percentage|
+
+-----------
+Development
+-----------
 
 |falcon| |poetry| |pre-commit| |code-style|
-A repo for testing github actions.
 
 ------------
 Installation
@@ -309,30 +324,42 @@ Run pytest test cases and get a coverage report.
 
     > pytest --cov=gh_action_testing --cov-report=term-missing tests/
 
+..
+    Alternate github build
+    .. |build| image:: https://img.shields.io/github/actions/workflow/status/bcsummers/gh-action-testing/main.yml?branch=develop
+
 .. |build| image:: https://github.com/bcsummers/gh-action-testing/workflows/build/badge.svg
     :target: https://github.com/bcsummers/gh-action-testing/actions/workflows/main.yml
-
-.. |coverage| image:: https://codecov.io/gh/bcsummers/gh-action-testing/branch/develop/graph/badge.svg?token=VTEEB03ADS
-    :target: https://codecov.io/gh/bcsummers/gh-action-testing
-
-.. |latest-test| image:: https://api-public.service.runforesight.com/api/v1/badge/test?repoId=92c63588-f38c-412a-96ca-60a56b67d061
-    :target: https://www.runforesight.com/
-
-.. |successful-test| image:: https://api-public.service.runforesight.com/api/v1/badge/success?repoId=92c63588-f38c-412a-96ca-60a56b67d061
-    :target: https://www.runforesight.com/
-
-.. |utilization| image:: https://api-public.service.runforesight.com/api/v1/badge/utilization?repoId=92c63588-f38c-412a-96ca-60a56b67d061
-    :target: https://www.runforesight.com/
-
-.. |codeql| image:: https://github.com/bcsummers/gh-action-testing/actions/workflows/codeql.yml/badge.svg
-    :target: https://github.com/bcsummers/gh-action-testing/actions/workflows/codeql.yml
-
-.. |falcon| image:: https://img.shields.io/static/v1?logo=falcon&logoColor=white&label=falcon&message=add-on&color=60a5fa
-    :target: https://github.com/falconry/falcon
 
 .. |code-style| image:: https://img.shields.io/static/v1?logo=black&label=code%20style&message=black&color=black
     :target: https://github.com/python/black
     :alt: poetry
+
+.. |codeql| image:: https://github.com/bcsummers/gh-action-testing/actions/workflows/codeql.yml/badge.svg
+    :target: https://github.com/bcsummers/gh-action-testing/actions/workflows/codeql.yml
+
+..
+    Alternate coverage
+    .. |coverage| image:: https://img.shields.io/codecov/c/github/bcsummers/gh-action-testing?style=flat-square
+
+.. |coverage| image:: https://codecov.io/gh/bcsummers/gh-action-testing/branch/develop/graph/badge.svg?token=VTEEB03ADS
+    :target: https://codecov.io/gh/bcsummers/gh-action-testing
+
+.. |dependency-review| image:: https://github.com/bcsummers/gh-action-testing/actions/workflows/dependency-review.yml/badge.svg
+    :target: https://github.com/bcsummers/gh-action-testing/actions/workflows/dependency-review.yml
+
+.. |falcon| image:: https://img.shields.io/static/v1?logo=falcon&logoColor=white&label=falcon&message=add-on&color=60a5fa
+    :target: https://github.com/falconry/falcon
+
+.. |latest-test| image:: https://api-public.service.runforesight.com/api/v1/badge/test?repoId=92c63588-f38c-412a-96ca-60a56b67d061
+    :target: https://www.runforesight.com/
+..
+    License is displayed on the github page
+    .. |license| image:: https://img.shields.io/github/license/bcsummers/gh-action-testing?color=60a5fa
+        :target: https://www.apache.org/licenses/LICENSE-2.0
+
+.. |maintainability-percentage| image:: https://img.shields.io/codeclimate/maintainability-percentage/bcsummers/gh-action-testing
+    :target: https://codeclimate.com/github/bcsummers/gh-action-testing
 
 .. |poetry| image:: https://img.shields.io/static/v1?logo=poetry&logoColor=white&label=poetry&message=enabled&color=60a5fa
     :target: https://github.com/python-poetry/poetry
@@ -341,3 +368,9 @@ Run pytest test cases and get a coverage report.
 .. |pre-commit| image:: https://img.shields.io/static/v1?logo=pre-commit&logoColor=white&label=pre-commit&message=enabled&color=60a5fa
     :target: https://github.com/pre-commit/pre-commit
     :alt: pre-commit
+
+.. |successful-test| image:: https://api-public.service.runforesight.com/api/v1/badge/success?repoId=92c63588-f38c-412a-96ca-60a56b67d061
+    :target: https://www.runforesight.com/
+
+.. |utilization| image:: https://api-public.service.runforesight.com/api/v1/badge/utilization?repoId=92c63588-f38c-412a-96ca-60a56b67d061
+    :target: https://www.runforesight.com/
