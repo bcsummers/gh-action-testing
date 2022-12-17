@@ -16,11 +16,11 @@ Analysis
 
 |coverage| |successful-test| |utilization| |maintainability-percentage|
 
------
-Other
------
+-----------
+Development
+-----------
 
-|falcon| |poetry| |pre-commit| |code-style| |license|
+|falcon| |poetry| |pre-commit| |code-style|
 
 ------------
 Installation
@@ -353,9 +353,10 @@ Run pytest test cases and get a coverage report.
 
 .. |latest-test| image:: https://api-public.service.runforesight.com/api/v1/badge/test?repoId=92c63588-f38c-412a-96ca-60a56b67d061
     :target: https://www.runforesight.com/
-
-.. |license| image:: https://img.shields.io/github/license/bcsummers/gh-action-testing?color=60a5fa
-    :target: https://www.apache.org/licenses/LICENSE-2.0
+..
+    License is displayed on the github page
+    .. |license| image:: https://img.shields.io/github/license/bcsummers/gh-action-testing?color=60a5fa
+        :target: https://www.apache.org/licenses/LICENSE-2.0
 
 .. |maintainability-percentage| image:: https://img.shields.io/codeclimate/maintainability-percentage/bcsummers/gh-action-testing
     :target: https://codeclimate.com/github/bcsummers/gh-action-testing
