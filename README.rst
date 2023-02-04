@@ -326,7 +326,7 @@ Run pytest test cases and get a coverage report.
 
 ..
     Alternate github build
-    .. |build| image:: https://img.shields.io/github/actions/workflow/status/bcsummers/gh-action-testing/main.yml?branch=develop
+    .. |build| image:: https://img.shields.io/github/actions/workflow/status/bcsummers/gh-action-testing/main.yml
 
 .. |build| image:: https://github.com/bcsummers/gh-action-testing/workflows/build/badge.svg
     :target: https://github.com/bcsummers/gh-action-testing/actions/workflows/main.yml
@@ -342,7 +342,7 @@ Run pytest test cases and get a coverage report.
     Alternate coverage
     .. |coverage| image:: https://img.shields.io/codecov/c/github/bcsummers/gh-action-testing?style=flat-square
 
-.. |coverage| image:: https://codecov.io/gh/bcsummers/gh-action-testing/branch/develop/graph/badge.svg?token=VTEEB03ADS
+.. |coverage| image:: https://codecov.io/gh/bcsummers/gh-action-testing/branch/main/graph/badge.svg?token=VTEEB03ADS
     :target: https://codecov.io/gh/bcsummers/gh-action-testing
 
 .. |dependency-review| image:: https://github.com/bcsummers/gh-action-testing/actions/workflows/dependency-review.yml/badge.svg
